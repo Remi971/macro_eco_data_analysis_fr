@@ -46,7 +46,7 @@ This project is a data pipeline designed to scrape economic data from the INSEE 
   Use the Airflow web interface to monitor the progress and status of the pipeline.
 
 ## Project Structure
-
+```
   /project
 ├── /dags
 │   └── etl_pipeline.py
@@ -58,6 +58,7 @@ This project is a data pipeline designed to scrape economic data from the INSEE 
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
+```
 
 ## Configuration
 Dockerfile: Configures the Docker image for the Airflow environment.
