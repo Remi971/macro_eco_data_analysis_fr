@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a data pipeline designed to scrape economic data from various INSEE websites, process the data, and load it into a PostgreSQL database. The pipeline is orchestrated using Apache Airflow and containerized with Docker for easy deployment and sharing.
+This project is a data pipeline designed to scrape economic data from the INSEE website, process the data, and load it into a PostgreSQL database. The pipeline is orchestrated using Apache Airflow and containerized with Docker for easy deployment and sharing.
 
 ## Features
 
