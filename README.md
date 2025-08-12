@@ -42,6 +42,25 @@ This project is a data pipeline designed to scrape economic data from the INSEE 
    Open your web browser and go to http://localhost:8080 to access the Airflow web interface.
    ID : airflow
    password : airflow
+7. **Create the database**:
+   First you need to get the IPAddress of the postgres container, to do that :
+   ```
+   docker ps
+    ```
+   Copy the container ID of the postgres container
+   ```
+   docker inspect [dockerID]
+   ```
+   At the end of the json in Networks copy the "IPAddress".
+   then go to http://localhost:5433 to access pgAdmin and :
+   - Create a new server
+   - In the General Tab : Give it a name
+   - In the Connection Tab :
+     * Host name/ address : [Paste the IPAddress]
+     * Port: 5433
+     * username: airflow
+     * password: airflow
+   - And Save.
 ## Usage
 
   Trigger the Pipeline:
