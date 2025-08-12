@@ -25,15 +25,23 @@ This project is a data pipeline designed to scrape economic data from the INSEE 
    ```sh
    git clone https://github.com/yourusername/your-repo.git
    cd your-repo
-2. **Set Up Environment Variables**:
-   Create a .env file in the root directory and add the necessary environment variables:
-   POSTGRES_PASSWORD=secret
-   POSTGRES_DB=test
-3. *Build and Start the Docker Containers**:
-   ```docker-compose up --build```
-4. **Access Airflow**:
+2. **Initializing environnement**:
+   On Linux, the quick-start needs to know your host user id and needs to have group id set to 0. Otherwise the files created in dags, logs, config and plugins will be created with root user ownership. You have to make        sure to configure them for the docker-compose:
+   ```
+   mkdir -p ./dags ./logs ./plugins ./config
+   echo -e "AIRFLOW_UID=$(id -u)" > .env
+   ```
+3. **Initialize the database**:
+   On all operating systems, you need to run database migrations and create the first user account. To do this, run.
+   ```
+   docker compose up airflow-init
+   ```
+5. *Build and Start the Docker Containers**:
+   ```docker-compose up```
+6. **Access Airflow**:
    Open your web browser and go to http://localhost:8080 to access the Airflow web interface.
-
+   ID : airflow
+   password : airflow
 ## Usage
 
   Trigger the Pipeline:
